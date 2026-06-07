@@ -14,9 +14,9 @@ function App() {
 
   return (
     <div className="app-container">
-      <BackgroundIcons />
       <Header lang={lang} setLang={setLang} />
       <main className="main-content">
+        <BackgroundIcons />
         <About lang={lang} />
         <ExperienceProjects lang={lang} />
         <Skills lang={lang} />

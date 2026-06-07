@@ -146,9 +146,20 @@ section {
 }
 
 /* Background floating icons */
+.bg-container {
+  position: fixed;
+  top: 0;
+  left: var(--header-width);
+  width: calc(100vw - var(--header-width));
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
 .bg-icon {
   position: absolute;
-  opacity: 0.25;
+  opacity: 0.05;
   z-index: -1;
   pointer-events: none;
 }
@@ -166,6 +177,24 @@ section {
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.project-popup {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  border: 2px solid var(--accent-color);
+  background-color: var(--bg-card);
+  padding: 4px;
+}
+
+.project-popup img {
+  display: block;
+  max-width: 350px;
+  border-radius: 8px;
 }
 
 .card-header {
@@ -242,6 +271,10 @@ ul.custom-list li::before {
 
 /* Responsive */
 @media (max-width: 900px) {
+  .bg-container {
+    left: 0;
+    width: 100vw;
+  }
   .app-container {
     flex-direction: column;
   }

@@ -1,6 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function ExperienceProjects({ lang }) {
+  const [hoverImage, setHoverImage] = useState(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e) => {
+    // TODO: Plus tard, ajouter une condition sur `e.clientY` 
+    // pour vérifier si on est trop près du bas de la page.
+    // Si c'est le cas, soustraire la hauteur de l'image pour l'afficher vers le haut.
+    setMousePos({ x: e.clientX, y: e.clientY });
+  };
+
   const t = {
     fr: {
       title: "Expériences & Projets",
@@ -8,7 +18,8 @@ function ExperienceProjects({ lang }) {
         {
           title: "Développement d'un système d'exploitation en C",
           date: "2025/2026",
-          desc: "Multitâche, interruptions, timer, console."
+          desc: "Multitâche, interruptions, timer, console.",
+          image: "/assets/gif/os_animation.gif"
         },
         {
           title: "Compilateur Java en Java",
@@ -33,7 +44,8 @@ function ExperienceProjects({ lang }) {
         {
           title: "Development of an operating system in C",
           date: "2025/2026",
-          desc: "Multitasking, interruptions, timer, console."
+          desc: "Multitasking, interruptions, timer, console.",
+          image: "/assets/gif/os_animation.gif"
         },
         {
           title: "Java compiler in Java",
@@ -58,7 +70,14 @@ function ExperienceProjects({ lang }) {
     <section id="experience">
       <h2>{t[lang].title}</h2>
       {t[lang].projects.map((proj, i) => (
-        <div className="card" key={i}>
+        <div 
+          className="card" 
+          key={i}
+          onMouseEnter={() => proj.image && setHoverImage(proj.image)}
+          onMouseLeave={() => setHoverImage(null)}
+          onMouseMove={(e) => proj.image && handleMouseMove(e)}
+          style={{ cursor: proj.image ? 'pointer' : 'default' }}
+        >
           <div className="card-header">
             <h3>{proj.title}</h3>
             <span className="date-badge">{proj.date}</span>
@@ -66,6 +85,21 @@ function ExperienceProjects({ lang }) {
           <p>{proj.desc}</p>
         </div>
       ))}
+
+      {hoverImage && (
+        <div 
+          className="project-popup"
+          style={{
+            left: mousePos.x + 20,
+            top: mousePos.y + 20
+          }}
+        >
+          <img 
+            src={hoverImage} 
+            alt="Project Preview" 
+          />
+        </div>
+      )}
     </section>
   );
 }
