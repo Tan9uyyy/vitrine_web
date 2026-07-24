@@ -7,8 +7,8 @@ function Education({ lang }) {
       edu: [
         {
           school: "Grenoble INP - PHELMA - France",
-          date: "2024/2026",
-          desc: "Programme Ingénieur - Systèmes Embarqués et IoT. Équivalent d'un Master (en cours - avant-dernière année)."
+          date: "2024/2027",
+          desc: "Diplôme d'ingénieur - Systèmes Embarqués et Objets Connectés (SEOC). Conception de circuits intégrés (VHDL), systèmes embarqués bas niveau, temps réel."
         },
         {
           school: "Classes Préparatoires aux Grandes Écoles (CPGE)",
@@ -27,8 +27,8 @@ function Education({ lang }) {
       edu: [
         {
           school: "Grenoble INP - PHELMA - France",
-          date: "2024/2026",
-          desc: "Engineering program - Embedded Systems and IoT. Program comparable to an Integrated Master of Engineering (MEng) (currently in progress - penultimate year)."
+          date: "2024/2027",
+          desc: "Engineering Degree - Embedded Systems and Connected Objects (SEOC). Integrated circuit design (VHDL), low-level embedded systems, real-time."
         },
         {
           school: "Science preparatory program",

@@ -26,7 +26,7 @@ function BackgroundIcons() {
         const offsetX = (r % 2 === 1) ? (colStep / 2) : 0;
         
         generated.push({
-          src: `/assets/svg/${randomIcon}`,
+          src: `${import.meta.env.BASE_URL}assets/svg/${randomIcon}`,
           id: `${r}-${c}`,
           top: `${(r + 0.5) * rowStep}%`,
           left: `${(c + 0.5) * colStep + offsetX}%`,

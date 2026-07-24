@@ -16,25 +16,25 @@ function ExperienceProjects({ lang }) {
       title: "Expériences & Projets",
       projects: [
         {
-          title: "Développement d'un système d'exploitation en C",
+          title: "Stagiaire de Recherche – Systèmes Multi-Drones",
+          date: "Avril 2026 – Présent",
+          desc: "Développement d'un système de contrôle de vol multi-drones avec évitement d'obstacles. Modélisation mathématique et implémentation de fonctions de barrière de contrôle (CBF) en Python/C++."
+        },
+        {
+          title: "Prototype de jeu multijoueur (MOBA) en C++",
+          date: "Projet personnel",
+          desc: "Expérimentation architecturale, intégration de la bibliothèque SFML 3 (rendu/événements), et structuration avec CMake pour gérer la synchronisation réseau."
+        },
+        {
+          title: "Création d'un système d'exploitation en C",
           date: "2025/2026",
-          desc: "Multitâche, interruptions, timer, console.",
-          image: "/assets/gif/os_animation.gif"
+          desc: "Développement de l'architecture de base : système multitâche, gestion des interruptions, timer et console.",
+          image: `${import.meta.env.BASE_URL}assets/gif/os_animation.gif`
         },
         {
           title: "Compilateur Java en Java",
           date: "2025/2026",
-          desc: "Lexer, parser, analyse contextuelle, génération de code, optimisation."
-        },
-        {
-          title: "Bibliothèque générique en C - structures de données",
-          date: "2025/2026",
-          desc: "Listes, files, piles, ensembles et maps, arbres, tests automatisés et benchmarks."
-        },
-        {
-          title: "Traitement d'image embarqué - comptage de bulles",
-          date: "2024/2025",
-          desc: "Mesure de débit utilisant vision + microcontrôleur."
+          desc: "Implémentation des étapes de compilation : Lexer, parser, analyse contextuelle, génération de code et optimisation."
         }
       ]
     },
@@ -42,25 +42,25 @@ function ExperienceProjects({ lang }) {
       title: "Experiences & Projects",
       projects: [
         {
-          title: "Development of an operating system in C",
-          date: "2025/2026",
-          desc: "Multitasking, interruptions, timer, console.",
-          image: "/assets/gif/os_animation.gif"
+          title: "Research Intern – Multi-Drone Systems",
+          date: "April 2026 – Present",
+          desc: "Development of a multi-drone flight control system with obstacle avoidance. Mathematical modeling and implementation of control barrier functions (CBF) in Python/C++."
         },
         {
-          title: "Java compiler in Java",
-          date: "2025/2026",
-          desc: "Lexer, parser, contextual analysis, code generation, optimization."
+          title: "Multiplayer Game Prototype (MOBA) in C++",
+          date: "Personal Project",
+          desc: "Architectural experimentation, integration of SFML 3 library (rendering/events), and structuring with CMake to manage network synchronization."
         },
         {
-          title: "Generic library in C - data structures",
+          title: "Operating System Creation in C",
           date: "2025/2026",
-          desc: "Lists, queues, stacks, sets and maps, trees, automated testing and benchmarks."
+          desc: "Development of the core architecture: multitasking system, interrupt management, timer, and console.",
+          image: `${import.meta.env.BASE_URL}assets/gif/os_animation.gif`
         },
         {
-          title: "Embedded image processing - bubble counting",
-          date: "2024/2025",
-          desc: "Flow measurement using vision + microcontroller."
+          title: "Java Compiler in Java",
+          date: "2025/2026",
+          desc: "Implementation of compilation steps: Lexer, parser, contextual analysis, code generation, and optimization."
         }
       ]
     }

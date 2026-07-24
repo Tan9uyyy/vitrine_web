@@ -3,7 +3,7 @@ import React from 'react';
 function Header({ lang, setLang }) {
   const t = {
     fr: {
-      subtitle: "Étudiant en Systèmes Embarqués & Objets Connectés",
+      subtitle: "Étudiant Ingénieur en Développement Logiciel & Systèmes Embarqués",
       about: "À propos",
       exp: "Expériences & Projets",
       skills: "Compétences",
@@ -12,7 +12,7 @@ function Header({ lang, setLang }) {
       contact: "Contact"
     },
     en: {
-      subtitle: "Student in Embedded Systems & Connected Objects",
+      subtitle: "Engineering Student in Software Development & Embedded Systems",
       about: "About",
       exp: "Experiences & Projects",
       skills: "Skills",
@@ -35,7 +35,7 @@ function Header({ lang, setLang }) {
     <aside className="sidebar">
       <div className="profile-img-container">
         {/* Placeholder for now. Replace with real profile image */}
-        <img src="/assets/photo/photo_profil_Tanguy.png" alt="Tanguy Bouchut Profile" />
+        <img src={`${import.meta.env.BASE_URL}assets/photo/photo_profil_Tanguy.png`} alt="Tanguy Bouchut Profile" />
       </div>
       <h2>Tanguy BOUCHUT</h2>
       <p className="subtitle">{t[lang].subtitle}</p>
@@ -51,8 +51,8 @@ function Header({ lang, setLang }) {
       </nav>
 
       <div className="lang-switch">
-        <img src="/assets/svg/flag_france.svg" alt="Français" onClick={() => setLang('fr')} style={{opacity: lang === 'fr' ? 1 : 0.4}}/>
-        <img src="/assets/svg/flag_uk.svg" alt="English" onClick={() => setLang('en')} style={{opacity: lang === 'en' ? 1 : 0.4}}/>
+        <img src={`${import.meta.env.BASE_URL}assets/svg/flag_france.svg`} alt="Français" onClick={() => setLang('fr')} style={{opacity: lang === 'fr' ? 1 : 0.4}}/>
+        <img src={`${import.meta.env.BASE_URL}assets/svg/flag_uk.svg`} alt="English" onClick={() => setLang('en')} style={{opacity: lang === 'en' ? 1 : 0.4}}/>
       </div>
     </aside>
   );

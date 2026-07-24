@@ -29,9 +29,6 @@ function Contact({ lang }) {
           <div className="contact-item">
             <strong>LinkedIn :</strong> <a href="https://linkedin.com/in/tanguybouchut/" target="_blank" rel="noreferrer">linkedin.com/in/tanguybouchut/</a>
           </div>
-          <div className="contact-item">
-            <strong>GitHub / Portfolio :</strong> <a href="https://tanguy-bouchut-github-portfolio.carrd.co/" target="_blank" rel="noreferrer">Lien Portfolio</a>
-          </div>
         </div>
       </div>
     </section>

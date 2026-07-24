@@ -8,13 +8,17 @@
   --accent-color: #000000;
   --border-color: rgba(0, 0, 0, 0.1);
   --font-main: 'Outfit', sans-serif;
-  --header-width: 300px;
+  --header-width: 306px;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
