@@ -3,22 +3,17 @@ import React from 'react';
 function Education({ lang }) {
   const t = {
     fr: {
-      title: "Parcours (Éducation)",
+      title: "Parcours (Formation)",
       edu: [
         {
-          school: "Grenoble INP - PHELMA - France",
-          date: "2024/2027",
-          desc: "Diplôme d'ingénieur - Systèmes Embarqués et Objets Connectés (SEOC). Conception de circuits intégrés (VHDL), systèmes embarqués bas niveau, temps réel."
+          school: "Grenoble INP - PHELMA",
+          date: "2024 – 2027",
+          desc: "Diplôme d'ingénieur - Systèmes Embarqués et Objets Connectés (SEOC). Conception et vérification de SoC (multi-cœurs, NoC), sécurité matérielle, contrôle-commande temps réel."
         },
         {
           school: "Classes Préparatoires aux Grandes Écoles (CPGE)",
-          date: "2022/2024",
-          desc: "Mathématiques, Physique, Informatique."
-        },
-        {
-          school: "Baccalauréat - Mention Très Bien",
-          date: "2022",
-          desc: "Spécialités scientifiques : Mathématiques, Physique-Chimie, et Sciences de l'Ingénieur (options Mathématiques Expertes et Sport)."
+          date: "2022 – 2024",
+          desc: "Spécialisation en Mathématiques, Physique et Informatique."
         }
       ]
     },
@@ -26,19 +21,14 @@ function Education({ lang }) {
       title: "Education",
       edu: [
         {
-          school: "Grenoble INP - PHELMA - France",
-          date: "2024/2027",
-          desc: "Engineering Degree - Embedded Systems and Connected Objects (SEOC). Integrated circuit design (VHDL), low-level embedded systems, real-time."
+          school: "Grenoble INP - PHELMA",
+          date: "2024 – 2027",
+          desc: "Engineering Degree - Embedded Systems and Connected Objects (SEOC). SoC design and verification (multi-core, NoC), hardware security, real-time control."
         },
         {
-          school: "Science preparatory program",
-          date: "2022/2024",
-          desc: "Mathematics, Physics, Computer Science."
-        },
-        {
-          school: "High school diploma - Summa cum laude",
-          date: "2022",
-          desc: "Scientific specializations: Mathematics, Physics-Chemistry, and Engineering Sciences with options in Advanced Mathematics and Sports."
+          school: "Science preparatory classes (CPGE)",
+          date: "2022 – 2024",
+          desc: "Specialization in Mathematics, Physics, and Computer Science."
         }
       ]
     }

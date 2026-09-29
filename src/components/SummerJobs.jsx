@@ -3,24 +3,26 @@ import React from 'react';
 function SummerJobs({ lang }) {
   const t = {
     fr: {
-      title: "Jobs Saisonniers",
+      title: "Jobs Saisonniers & Étudiants",
       jobs: [
         {
-          company: "Intermarché, RGIS, EHPAD, entreprise agricole, industrie textile",
-          date: "2019 à 2025",
-          resp: "Responsabilités clés : inventaire et mise en rayon dans de grands magasins, service en restauration collective, travail manuel et agricole.",
-          skills: "Compétences transférables développées : travail d'équipe, service client, responsabilité, indépendance, attention aux détails."
+          company: "Divers emplois saisonniers & étudiants",
+          subtitle: "Intermarché, RGIS, EHPAD, Agriculture",
+          date: "2019 – 2025",
+          resp: "Grande distribution, agriculture, restauration.",
+          skills: "Développement de l'autonomie, du service client et du travail en équipe."
         }
       ]
     },
     en: {
-      title: "Seasonal Student Jobs",
+      title: "Seasonal & Student Jobs",
       jobs: [
         {
-          company: "Intermarché, RGIS, EHPAD, agricultural companie, textile industry",
-          date: "2019 to 2025",
-          resp: "Key responsibilities: inventory and stocking shelves in large retail stores, wait staff in institutional catering, manual labor and agricultural work.",
-          skills: "Transferable skills developed: teamwork, customer service, responsibility, independence, attention to detail."
+          company: "Diverse seasonal & student jobs",
+          subtitle: "Intermarché, RGIS, EHPAD, Agriculture",
+          date: "2019 – 2025",
+          resp: "Retail distribution, agriculture, catering services.",
+          skills: "Development of autonomy, customer service, and teamwork."
         }
       ]
     }
@@ -32,7 +34,10 @@ function SummerJobs({ lang }) {
       {t[lang].jobs.map((job, i) => (
         <div className="card" key={i}>
           <div className="card-header">
-            <h3>{job.company}</h3>
+            <div>
+              <h3>{job.company}</h3>
+              {job.subtitle && <p className="card-subtitle">{job.subtitle}</p>}
+            </div>
             <span className="date-badge">{job.date}</span>
           </div>
           <ul className="custom-list">

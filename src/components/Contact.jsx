@@ -29,6 +29,9 @@ function Contact({ lang }) {
           <div className="contact-item">
             <strong>LinkedIn :</strong> <a href="https://linkedin.com/in/tanguybouchut/" target="_blank" rel="noreferrer">linkedin.com/in/tanguybouchut/</a>
           </div>
+          <div className="contact-item">
+            <strong>CV :</strong> <a href={`${import.meta.env.BASE_URL}cv.pdf`} target="_blank" rel="noreferrer">{lang === 'fr' ? 'Consulter mon CV (PDF)' : 'View my Resume (PDF)'}</a>
+          </div>
         </div>
       </div>
     </section>

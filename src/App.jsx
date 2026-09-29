@@ -5,6 +5,7 @@ import ExperienceProjects from './components/ExperienceProjects';
 import Skills from './components/Skills';
 import Education from './components/Education';
 import SummerJobs from './components/SummerJobs';
+import Interests from './components/Interests';
 import Contact from './components/Contact';
 import BackgroundIcons from './components/BackgroundIcons';
 import './index.css';
@@ -22,6 +23,7 @@ function App() {
         <Skills lang={lang} />
         <Education lang={lang} />
         <SummerJobs lang={lang} />
+        <Interests lang={lang} />
         <Contact lang={lang} />
       </main>
     </div>

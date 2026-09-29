@@ -7,7 +7,7 @@ function Skills({ lang }) {
       categories: [
         {
           name: "Programmation",
-          skills: ["C", "C++", "Java", "Python", "SQL (postgreSQL)", "HTML/CSS/Javascript"]
+          skills: ["C", "C++", "Java", "Python", "SQL (PostgreSQL)", "Buzz (robotique d'essaim)"]
         },
         {
           name: "Systèmes embarqués / bas-niveau",
@@ -15,11 +15,15 @@ function Skills({ lang }) {
         },
         {
           name: "Conception de circuits intégrés",
-          skills: ["VHDL/Verilog", "ModelSim"]
+          skills: ["VHDL", "Verilog", "ModelSim", "Vivado"]
         },
         {
           name: "Outils & Environnements",
-          skills: ["Terminal Linux", "Git / GitHub / GitLab", "Makefile, Maven", "Debugging"]
+          skills: ["Linux (CLI)", "Git / GitHub", "GDB", "CMake", "Make", "VSCode"]
+        },
+        {
+          name: "Langues",
+          skills: ["Français (Langue maternelle)", "Anglais (C1 - Courant)"]
         },
         {
           name: "Méthodologies",
@@ -32,7 +36,7 @@ function Skills({ lang }) {
       categories: [
         {
           name: "Programming",
-          skills: ["C", "C++", "Java", "Python", "SQL (postgreSQL)", "HTML/CSS/Javascript"]
+          skills: ["C", "C++", "Java", "Python", "SQL (PostgreSQL)", "Buzz (swarm robotics)"]
         },
         {
           name: "Embedded systems / low-level",
@@ -40,15 +44,19 @@ function Skills({ lang }) {
         },
         {
           name: "Digital integrated circuit design",
-          skills: ["VHDL/Verilog", "ModelSim"]
+          skills: ["VHDL", "Verilog", "ModelSim", "Vivado"]
         },
         {
           name: "Tools & environments",
-          skills: ["Linux terminal", "Git / GitHub / GitLab", "Makefile, Maven", "Debugging"]
+          skills: ["Linux (CLI)", "Git / GitHub", "GDB", "CMake", "Make", "VSCode"]
+        },
+        {
+          name: "Languages",
+          skills: ["French (Native)", "English (C1 - Fluent)"]
         },
         {
           name: "Methodologies",
-          skills: ["Unit testing", "Technical documentation", "Performance optimization", "Agile methodology: scrum"]
+          skills: ["Unit testing", "Technical documentation", "Performance optimization", "Agile methodology: Scrum"]
         }
       ]
     }
