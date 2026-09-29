@@ -5,10 +5,20 @@ function ExperienceProjects({ lang }) {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e) => {
-    // TODO: Plus tard, ajouter une condition sur `e.clientY` 
-    // pour vérifier si on est trop près du bas de la page.
-    // Si c'est le cas, soustraire la hauteur de l'image pour l'afficher vers le haut.
-    setMousePos({ x: e.clientX, y: e.clientY });
+    const popupSize = 360;
+    const padding = 20;
+
+    let x = e.clientX + padding;
+    let y = e.clientY + padding;
+
+    if (y + popupSize > window.innerHeight) {
+      y = Math.max(10, e.clientY - popupSize - 10);
+    }
+    if (x + popupSize > window.innerWidth) {
+      x = Math.max(10, e.clientX - popupSize - 10);
+    }
+
+    setMousePos({ x, y });
   };
 
   const t = {
@@ -28,7 +38,8 @@ function ExperienceProjects({ lang }) {
           report: {
             url: `${import.meta.env.BASE_URL}assets/rapportStage.pdf`,
             label: "Télécharger mon rapport de stage (PDF)"
-          }
+          },
+          image: `${import.meta.env.BASE_URL}assets/gif/stage2A.gif`
         },
         {
           title: "Prototype de jeu multijoueur (MOBA) en C++",
@@ -75,7 +86,8 @@ function ExperienceProjects({ lang }) {
           report: {
             url: `${import.meta.env.BASE_URL}assets/rapportStage.pdf`,
             label: "Download Internship Report (PDF)"
-          }
+          },
+          image: `${import.meta.env.BASE_URL}assets/gif/stage2A.gif`
         },
         {
           title: "Multiplayer Game Prototype (MOBA) in C++",
