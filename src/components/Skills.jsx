@@ -7,27 +7,31 @@ function Skills({ lang }) {
       categories: [
         {
           name: "Programmation",
-          skills: ["C", "C++", "Java", "Python", "SQL (PostgreSQL)", "Buzz (robotique d'essaim)"]
+          skills: ["C", "C++", "Python", "Java", "SQL (PostgreSQL)", "Buzz (robotique d'essaim)"]
         },
         {
           name: "Systèmes embarqués / bas-niveau",
           skills: ["Temps réel", "Multithreading", "Microcontrôleurs"]
         },
         {
-          name: "Conception de circuits intégrés",
-          skills: ["VHDL", "Verilog", "ModelSim", "Vivado", "KiCad"]
+          name: "Conception numérique / FPGA",
+          skills: ["VHDL", "Verilog", "ModelSim", "Vivado", "GHDL"]
+        },
+        {
+          name: "Électronique & CAO",
+          skills: ["KiCad"]
         },
         {
           name: "Outils & Environnements",
           skills: ["Linux (CLI)", "Git / GitHub", "GDB", "CMake", "Make", "VSCode"]
         },
         {
-          name: "Langues",
-          skills: ["Français (Langue maternelle)", "Anglais (C1 - Courant)"]
-        },
-        {
           name: "Méthodologies",
           skills: ["Tests unitaires", "Documentation technique", "Optimisation de performance", "Méthode Agile: Scrum"]
+        },
+        {
+          name: "Langues",
+          skills: ["Français (Langue maternelle)", "Anglais (C1 - Courant)"]
         }
       ]
     },
@@ -36,27 +40,31 @@ function Skills({ lang }) {
       categories: [
         {
           name: "Programming",
-          skills: ["C", "C++", "Java", "Python", "SQL (PostgreSQL)", "Buzz (swarm robotics)"]
+          skills: ["C", "C++", "Python", "Java", "SQL (PostgreSQL)", "Buzz (swarm robotics)"]
         },
         {
           name: "Embedded systems / low-level",
           skills: ["Real-time", "Multithreading", "Microcontrollers"]
         },
         {
-          name: "Digital integrated circuit design",
-          skills: ["VHDL", "Verilog", "ModelSim", "Vivado", "KiCad"]
+          name: "Digital Design & FPGA",
+          skills: ["VHDL", "Verilog", "ModelSim", "Vivado", "GHDL"]
+        },
+        {
+          name: "Electronics & CAD",
+          skills: ["KiCad"]
         },
         {
           name: "Tools & environments",
           skills: ["Linux (CLI)", "Git / GitHub", "GDB", "CMake", "Make", "VSCode"]
         },
         {
-          name: "Languages",
-          skills: ["French (Native)", "English (C1 - Fluent)"]
-        },
-        {
           name: "Methodologies",
           skills: ["Unit testing", "Technical documentation", "Performance optimization", "Agile methodology: Scrum"]
+        },
+        {
+          name: "Languages",
+          skills: ["French (Native)", "English (C1 - Fluent)"]
         }
       ]
     }

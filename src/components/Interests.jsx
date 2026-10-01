@@ -11,7 +11,7 @@ function Interests({ lang }) {
         },
         {
           title: "Veille Technologique",
-          desc: "Outils de développement, Intelligence Artificielle (IA), découvertes et innovations technologiques."
+          desc: "Intelligence Artificielle (IA), architectures matérielles, développement bas-niveau."
         }
       ]
     },
@@ -24,7 +24,7 @@ function Interests({ lang }) {
         },
         {
           title: "Technology Watch",
-          desc: "Development tools, Artificial Intelligence (AI), emerging technological innovations."
+          desc: "Artificial Intelligence (AI), hardware architectures, low-level development."
         }
       ]
     }

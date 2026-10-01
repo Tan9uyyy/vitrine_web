@@ -42,22 +42,6 @@ function ExperienceProjects({ lang }) {
           image: `${import.meta.env.BASE_URL}assets/gif/stage2A.gif`
         },
         {
-          title: "Prototype de jeu multijoueur (MOBA) en C++",
-          subtitle: "Projet personnel",
-          date: "Projet personnel",
-          bullets: [
-            "Expérimentation architecturale autour d’un concept de MOBA.",
-            "Intégration et migration vers la bibliothèque SFML 3 pour le rendu et la gestion des événements.",
-            "Structuration de l’environnement de build avec CMake et maquettage des problématiques de synchronisation réseau."
-          ],
-          image: `${import.meta.env.BASE_URL}assets/gif/lol.gif`,
-          link: "https://github.com/Tan9uyyy/MiniLeagueOfLegends",
-          github: {
-            url: "https://github.com/Tan9uyyy/MiniLeagueOfLegends",
-            label: "Voir le projet sur GitHub"
-          }
-        },
-        {
           title: "Conception d’un cœur de processeur RISC-V en VHDL",
           subtitle: "Projet académique – Architecture Avancée (Grenoble INP - PHELMA)",
           date: "Projet académique",
@@ -85,6 +69,22 @@ function ExperienceProjects({ lang }) {
             "Développement de l’architecture de base : système multitâche, gestion des interruptions, timer et console."
           ],
           image: `${import.meta.env.BASE_URL}assets/gif/os_animation.gif`
+        },
+        {
+          title: "Prototype de jeu multijoueur (MOBA) en C++",
+          subtitle: "Projet personnel",
+          date: "Projet personnel",
+          bullets: [
+            "Expérimentation architecturale autour d’un concept de MOBA.",
+            "Intégration et migration vers la bibliothèque SFML 3 pour le rendu et la gestion des événements.",
+            "Structuration de l’environnement de build avec CMake et maquettage des problématiques de synchronisation réseau."
+          ],
+          image: `${import.meta.env.BASE_URL}assets/gif/lol.gif`,
+          link: "https://github.com/Tan9uyyy/MiniLeagueOfLegends",
+          github: {
+            url: "https://github.com/Tan9uyyy/MiniLeagueOfLegends",
+            label: "Voir le projet sur GitHub"
+          }
         },
         {
           title: "Compilateur Java",
@@ -116,22 +116,6 @@ function ExperienceProjects({ lang }) {
           image: `${import.meta.env.BASE_URL}assets/gif/stage2A.gif`
         },
         {
-          title: "Multiplayer Game Prototype (MOBA) in C++",
-          subtitle: "Personal Project",
-          date: "Personal Project",
-          bullets: [
-            "Architectural experimentation around a MOBA concept.",
-            "Integration and migration to the SFML 3 library for rendering and event handling.",
-            "Structuring the build environment with CMake and prototyping network synchronization challenges."
-          ],
-          image: `${import.meta.env.BASE_URL}assets/gif/lol.gif`,
-          link: "https://github.com/Tan9uyyy/MiniLeagueOfLegends",
-          github: {
-            url: "https://github.com/Tan9uyyy/MiniLeagueOfLegends",
-            label: "View project on GitHub"
-          }
-        },
-        {
           title: "RISC-V Processor Core Design in VHDL",
           subtitle: "Academic Project – Advanced Architecture (Grenoble INP - PHELMA)",
           date: "Academic Project",
@@ -159,6 +143,22 @@ function ExperienceProjects({ lang }) {
             "Development of the core architecture: multitasking system, interrupt management, timer, and console."
           ],
           image: `${import.meta.env.BASE_URL}assets/gif/os_animation.gif`
+        },
+        {
+          title: "Multiplayer Game Prototype (MOBA) in C++",
+          subtitle: "Personal Project",
+          date: "Personal Project",
+          bullets: [
+            "Architectural experimentation around a MOBA concept.",
+            "Integration and migration to the SFML 3 library for rendering and event handling.",
+            "Structuring the build environment with CMake and prototyping network synchronization challenges."
+          ],
+          image: `${import.meta.env.BASE_URL}assets/gif/lol.gif`,
+          link: "https://github.com/Tan9uyyy/MiniLeagueOfLegends",
+          github: {
+            url: "https://github.com/Tan9uyyy/MiniLeagueOfLegends",
+            label: "View project on GitHub"
+          }
         },
         {
           title: "Java Compiler",

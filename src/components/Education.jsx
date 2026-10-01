@@ -11,7 +11,7 @@ function Education({ lang }) {
           desc: "Diplôme d'ingénieur - Systèmes Embarqués et Objets Connectés (SEOC). Conception et vérification de SoC (multi-cœurs, NoC), sécurité matérielle, contrôle-commande temps réel."
         },
         {
-          school: "Classes Préparatoires aux Grandes Écoles (CPGE)",
+          school: "CPGE MP2I / MPI — Lycée Claude Fauriel (Saint-Étienne)",
           date: "2022 – 2024",
           desc: "Spécialisation en Mathématiques, Physique et Informatique."
         }
@@ -26,7 +26,7 @@ function Education({ lang }) {
           desc: "Engineering Degree - Embedded Systems and Connected Objects (SEOC). SoC design and verification (multi-core, NoC), hardware security, real-time control."
         },
         {
-          school: "Science preparatory classes (CPGE)",
+          school: "CPGE MP2I / MPI — Lycée Claude Fauriel (Saint-Étienne)",
           date: "2022 – 2024",
           desc: "Specialization in Mathematics, Physics, and Computer Science."
         }
