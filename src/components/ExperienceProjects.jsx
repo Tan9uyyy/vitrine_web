@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 function ExperienceProjects({ lang }) {
   const [hoverImage, setHoverImage] = useState(null);
@@ -49,7 +49,33 @@ function ExperienceProjects({ lang }) {
             "Expérimentation architecturale autour d’un concept de MOBA.",
             "Intégration et migration vers la bibliothèque SFML 3 pour le rendu et la gestion des événements.",
             "Structuration de l’environnement de build avec CMake et maquettage des problématiques de synchronisation réseau."
-          ]
+          ],
+          image: `${import.meta.env.BASE_URL}assets/gif/lol.gif`,
+          link: "https://github.com/Tan9uyyy/MiniLeagueOfLegends",
+          github: {
+            url: "https://github.com/Tan9uyyy/MiniLeagueOfLegends",
+            label: "Voir le projet sur GitHub"
+          }
+        },
+        {
+          title: "Conception d’un cœur de processeur RISC-V en VHDL",
+          subtitle: "Projet académique – Architecture Avancée (Grenoble INP - PHELMA)",
+          date: "Projet académique",
+          bullets: [
+            "Conception matérielle (RV32I) : Développement VHDL des étages FETCH (PC, ROM), DECODE (décodage instructions/immédiats, banc de 32 registres), EXECUTE (ALU 32 bits, Store Unit) et MEMORY (RAM, Load Unit).",
+            "Architecture pipelinée 5 étages & Forwarding : Implémentation de la Forward Unit résolvant les aléas de données (hazards), atteignant un gain de performance mesuré de +382% par rapport au cœur séquentiel.",
+            "Vérification & Benchmarking (GHDL, GCC) : Rédaction de testbenches automatisés, exécution bare-metal de programmes C via liaison UART et validation sur le benchmark standard Dhrystone 2.1."
+          ],
+          report: {
+            url: `${import.meta.env.BASE_URL}assets/rapportRiscv.pdf`,
+            label: "Consulter le rapport technique (PDF)"
+          },
+          github: {
+            url: "https://github.com/Tan9uyyy/RISC-V-Core",
+            label: "Voir le projet sur GitHub"
+          },
+          link: "https://github.com/Tan9uyyy/RISC-V-Core",
+          image: `${import.meta.env.BASE_URL}assets/gif/riscv.gif`
         },
         {
           title: "Création d’un système d’exploitation en C",
@@ -97,7 +123,33 @@ function ExperienceProjects({ lang }) {
             "Architectural experimentation around a MOBA concept.",
             "Integration and migration to the SFML 3 library for rendering and event handling.",
             "Structuring the build environment with CMake and prototyping network synchronization challenges."
-          ]
+          ],
+          image: `${import.meta.env.BASE_URL}assets/gif/lol.gif`,
+          link: "https://github.com/Tan9uyyy/MiniLeagueOfLegends",
+          github: {
+            url: "https://github.com/Tan9uyyy/MiniLeagueOfLegends",
+            label: "View project on GitHub"
+          }
+        },
+        {
+          title: "RISC-V Processor Core Design in VHDL",
+          subtitle: "Academic Project – Advanced Architecture (Grenoble INP - PHELMA)",
+          date: "Academic Project",
+          bullets: [
+            "Hardware RTL Design (RV32I): VHDL development of FETCH (PC, ROM), DECODE (instruction/immediate decoding, 32-register file), EXECUTE (32-bit ALU, Store Unit), and MEMORY stages (RAM, Load Unit).",
+            "5-Stage Pipeline & Data Forwarding: Implementation of the Forward Unit to eliminate data hazards, achieving a measured +382% performance gain over the sequential core baseline.",
+            "Verification & Benchmarking (GHDL, GCC): Automated testbenches, bare-metal C cross-compilation with UART serial output, and full validation on the standard Dhrystone 2.1 benchmark."
+          ],
+          report: {
+            url: `${import.meta.env.BASE_URL}assets/rapportRiscv.pdf`,
+            label: "Download Technical Report (PDF)"
+          },
+          github: {
+            url: "https://github.com/Tan9uyyy/RISC-V-Core",
+            label: "View project on GitHub"
+          },
+          link: "https://github.com/Tan9uyyy/RISC-V-Core",
+          image: `${import.meta.env.BASE_URL}assets/gif/riscv.gif`
         },
         {
           title: "Operating System Creation in C",
@@ -127,10 +179,25 @@ function ExperienceProjects({ lang }) {
         <div 
           className="card" 
           key={i}
+          onClick={() => {
+            if (proj.link) {
+              const selection = window.getSelection();
+              if (selection && selection.toString().length > 0) return;
+              window.open(proj.link, '_blank', 'noopener,noreferrer');
+            }
+          }}
+          onKeyDown={(e) => {
+            if (proj.link && (e.key === 'Enter' || e.key === ' ')) {
+              e.preventDefault();
+              window.open(proj.link, '_blank', 'noopener,noreferrer');
+            }
+          }}
+          tabIndex={proj.link ? 0 : undefined}
+          role={proj.link ? 'link' : undefined}
           onMouseEnter={() => proj.image && setHoverImage(proj.image)}
           onMouseLeave={() => setHoverImage(null)}
           onMouseMove={(e) => proj.image && handleMouseMove(e)}
-          style={{ cursor: proj.image ? 'pointer' : 'default' }}
+          style={{ cursor: proj.link || proj.image ? 'pointer' : 'default' }}
         >
           <div className="card-header">
             <div>
@@ -147,22 +214,38 @@ function ExperienceProjects({ lang }) {
               ))}
             </ul>
           )}
-          {proj.report && (
-            <div style={{ marginTop: '1.25rem' }}>
-              <a 
-                href={proj.report.url}
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn-report-download"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                  <polyline points="7 10 12 15 17 10" />
-                  <line x1="12" y1="15" x2="12" y2="3" />
-                </svg>
-                <span>{proj.report.label}</span>
-              </a>
+          {(proj.report || proj.github) && (
+            <div style={{ marginTop: '1.25rem', display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+              {proj.report && (
+                <a 
+                  href={proj.report.url}
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="btn-report-download"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                  <span>{proj.report.label}</span>
+                </a>
+              )}
+              {proj.github && (
+                <a 
+                  href={proj.github.url}
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="btn-report-download"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                  </svg>
+                  <span>{proj.github.label}</span>
+                </a>
+              )}
             </div>
           )}
         </div>

@@ -15,7 +15,7 @@ function Skills({ lang }) {
         },
         {
           name: "Conception de circuits intégrés",
-          skills: ["VHDL", "Verilog", "ModelSim", "Vivado"]
+          skills: ["VHDL", "Verilog", "ModelSim", "Vivado", "KiCad"]
         },
         {
           name: "Outils & Environnements",
@@ -44,7 +44,7 @@ function Skills({ lang }) {
         },
         {
           name: "Digital integrated circuit design",
-          skills: ["VHDL", "Verilog", "ModelSim", "Vivado"]
+          skills: ["VHDL", "Verilog", "ModelSim", "Vivado", "KiCad"]
         },
         {
           name: "Tools & environments",
