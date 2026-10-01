@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import About from './components/About';
 import ExperienceProjects from './components/ExperienceProjects';
@@ -12,6 +12,13 @@ import './index.css';
 
 function App() {
   const [lang, setLang] = useState('fr');
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    document.title = lang === 'fr' 
+      ? 'Tanguy Bouchut - Portfolio & CV' 
+      : 'Tanguy Bouchut - Portfolio & Resume';
+  }, [lang]);
 
   return (
     <div className="app-container">
