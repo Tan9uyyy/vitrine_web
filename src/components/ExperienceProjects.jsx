@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { PORTFOLIO_DATA } from '../data/portfolioData';
+import { useFilter } from '../context/FilterContext';
+import { PORTFOLIO_DATA, isSkillMatchingProject } from '../data/portfolioData';
 
 function ExperienceProjects() {
   const { lang, t } = useLanguage();
+  const { selectedSkill, setSelectedSkill, clearFilter } = useFilter();
   const data = (PORTFOLIO_DATA[lang] || PORTFOLIO_DATA.fr).experience;
 
   const [hoverImage, setHoverImage] = useState(null);
@@ -32,11 +34,71 @@ function ExperienceProjects() {
     setActiveInlinePreview((prev) => (prev === index ? null : index));
   };
 
+  // Filter projects if a skill is selected
+  const displayedProjects = selectedSkill
+    ? data.projects.filter((proj) => isSkillMatchingProject(selectedSkill, proj))
+    : data.projects;
+
   return (
     <section id="experience" aria-labelledby="experience-title">
-      <h2 id="experience-title">{data.title}</h2>
+      <div className="section-header-row">
+        <h2 id="experience-title">{data.title}</h2>
+      </div>
 
-      {data.projects.map((proj, i) => {
+      {/* Active Filter Notification Banner */}
+      {selectedSkill && (
+        <div className="filter-status-banner" role="status" aria-live="polite">
+          <div className="filter-status-info">
+            <span className="filter-status-label">{t.activeFilter}</span>
+            <span className="filter-status-badge">{selectedSkill}</span>
+            <span className="filter-status-count">
+              ({displayedProjects.length}{' '}
+              {displayedProjects.length > 1
+                ? t.projectsFoundPlural
+                : t.projectsFoundSingle}
+              )
+            </span>
+          </div>
+          <button
+            type="button"
+            className="btn-clear-filter"
+            onClick={clearFilter}
+            aria-label={t.resetFilter}
+          >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+            <span>{t.resetFilter}</span>
+          </button>
+        </div>
+      )}
+
+      {displayedProjects.length === 0 && (
+        <div className="card filter-empty-card">
+          <p>{t.noProjectsMatch}</p>
+          <button
+            type="button"
+            className="btn-clear-filter"
+            onClick={clearFilter}
+            style={{ marginTop: '1rem' }}
+          >
+            {t.resetFilter}
+          </button>
+        </div>
+      )}
+
+      {displayedProjects.map((proj, i) => {
         const fullImagePath = proj.image
           ? `${import.meta.env.BASE_URL}${proj.image}`
           : null;
@@ -46,7 +108,7 @@ function ExperienceProjects() {
 
         return (
           <article
-            className="card project-card"
+            className={`card project-card ${selectedSkill ? 'project-card-filtered' : ''}`}
             key={proj.id || i}
             onMouseEnter={() => fullImagePath && setHoverImage(fullImagePath)}
             onMouseLeave={() => setHoverImage(null)}
@@ -86,11 +148,25 @@ function ExperienceProjects() {
 
             {proj.tags && proj.tags.length > 0 && (
               <div className="project-tags" aria-label="Technologies utilisées">
-                {proj.tags.map((tag, tagIdx) => (
-                  <span key={tagIdx} className="project-tag">
-                    {tag}
-                  </span>
-                ))}
+                {proj.tags.map((tag, tagIdx) => {
+                  const isTagActive =
+                    selectedSkill &&
+                    (tag.toLowerCase().includes(selectedSkill.toLowerCase()) ||
+                      selectedSkill.toLowerCase().includes(tag.toLowerCase()));
+
+                  return (
+                    <button
+                      type="button"
+                      key={tagIdx}
+                      className={`project-tag ${isTagActive ? 'active-highlight' : ''}`}
+                      onClick={() => setSelectedSkill(tag, false)}
+                      title={`${t.filterBySkill} : ${tag}`}
+                      aria-pressed={isTagActive}
+                    >
+                      {tag}
+                    </button>
+                  );
+                })}
               </div>
             )}
 

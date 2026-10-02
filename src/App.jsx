@@ -1,4 +1,5 @@
 import { LanguageProvider } from './context/LanguageContext';
+import { FilterProvider } from './context/FilterContext';
 import SkipLink from './components/SkipLink';
 import Header from './components/Header';
 import About from './components/About';
@@ -35,7 +36,9 @@ function AppContent() {
 function App() {
   return (
     <LanguageProvider>
-      <AppContent />
+      <FilterProvider>
+        <AppContent />
+      </FilterProvider>
     </LanguageProvider>
   );
 }

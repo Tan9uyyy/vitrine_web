@@ -14,7 +14,18 @@ export const PORTFOLIO_DATA = {
           title: "Stagiaire de Recherche – Robotique Autonome & Systèmes Multi-Drones",
           subtitle: "Laboratoire de vision et systèmes numériques (LVSN) - Université Laval, Québec (Canada)",
           date: "Mai 2026 – Août 2026",
-          tags: ["Python", "Buzz", "CBF-QP", "ROS", "Robotique d'essaim"],
+          tags: ["Python", "Buzz", "CBF-QP", "Robotique d'essaim"],
+          associatedSkills: [
+            "Python",
+            "Buzz (robotique d'essaim)",
+            "Buzz (swarm robotics)",
+            "Multithreading",
+            "Linux (CLI)",
+            "Documentation technique",
+            "Technical documentation",
+            "Optimisation de performance",
+            "Performance optimization"
+          ],
           bullets: [
             "Simulateur multi-robots (Python, Buzz) : Modélisation des dynamiques de vol et de batterie, cartographie locale par grille d’occupation (OGM) et calcul temps réel de champs de distance signée (SDF).",
             "Sécurité physique (CBF-QP) : Conception d’un filtre réactif d’évitement d’obstacles par fonctions barrières de contrôle (Control Barrier Functions) résolu par optimisation quadratique.",
@@ -32,7 +43,26 @@ export const PORTFOLIO_DATA = {
           title: "Conception d’un cœur de processeur RISC-V en VHDL",
           type: "Projet académique",
           date: "Projet académique",
-          tags: ["VHDL", "RISC-V (RV32I)", "Architecture pipelinée", "GHDL", "Dhrystone"],
+          tags: ["VHDL", "RISC-V (RV32I)", "Architecture pipelinée", "GHDL"],
+          associatedSkills: [
+            "VHDL",
+            "Verilog",
+            "ModelSim",
+            "Vivado",
+            "GHDL",
+            "C",
+            "FPGA",
+            "Linux (CLI)",
+            "Git / GitHub",
+            "GDB",
+            "Make",
+            "Tests unitaires",
+            "Unit testing",
+            "Documentation technique",
+            "Technical documentation",
+            "Optimisation de performance",
+            "Performance optimization"
+          ],
           bullets: [
             "Conception matérielle (RV32I) : Développement VHDL des étages FETCH (PC, ROM), DECODE (décodage instructions/immédiats, banc de 32 registres), EXECUTE (ALU 32 bits, Store Unit) et MEMORY (RAM, Load Unit).",
             "Architecture pipelinée 5 étages & Forwarding : Implémentation de la Forward Unit résolvant les aléas de données (hazards), atteignant un gain de performance mesuré de +382% par rapport au cœur séquentiel.",
@@ -53,7 +83,14 @@ export const PORTFOLIO_DATA = {
           title: "Création d’un système d’exploitation en C",
           type: "Projet académique",
           date: "Projet académique",
-          tags: ["C", "Systèmes d'exploitation", "Temps réel", "Gestion mémoire", "Multitâche"],
+          tags: ["C", "Systèmes d'exploitation", "Multitâche"],
+          associatedSkills: [
+            "C",
+            "Multithreading",
+            "Linux (CLI)",
+            "Make",
+            "GDB"
+          ],
           bullets: [
             "Développement de l’architecture de base : système multitâche, gestion des interruptions, timer et console."
           ],
@@ -65,6 +102,13 @@ export const PORTFOLIO_DATA = {
           type: "Projet personnel",
           date: "Projet personnel",
           tags: ["C++", "SFML 3", "CMake", "Réseau", "Architecture logicielle"],
+          associatedSkills: [
+            "C++",
+            "CMake",
+            "Git / GitHub",
+            "VSCode",
+            "Unit testing"
+          ],
           bullets: [
             "Expérimentation architecturale autour d’un concept de MOBA.",
             "Intégration et migration vers la bibliothèque SFML 3 pour le rendu et la gestion des événements.",
@@ -81,7 +125,14 @@ export const PORTFOLIO_DATA = {
           title: "Compilateur Java",
           type: "Projet académique",
           date: "Projet académique",
-          tags: ["Java", "Compilation", "Analyse lexicale / syntaxique", "Optimisation"],
+          tags: ["Java", "Compilation", "Vérification contextuelle", "Optimisation"],
+          associatedSkills: [
+            "Java",
+            "Tests unitaires",
+            "Unit testing",
+            "Optimisation de performance",
+            "Performance optimization"
+          ],
           bullets: [
             "Implémentation des étapes de compilation : Lexer, parser, analyse contextuelle, génération de code et optimisation."
           ]
@@ -199,7 +250,19 @@ export const PORTFOLIO_DATA = {
           title: "Research Intern – Autonomous Robotics & Multi-Drone Systems",
           subtitle: "Computer Vision and Digital Systems Laboratory (LVSN) - Université Laval, Québec (Canada)",
           date: "May 2026 – August 2026",
-          tags: ["Python", "Buzz", "CBF-QP", "ROS", "Swarm Robotics"],
+          tags: ["Python", "Buzz", "CBF-QP", "Swarm Robotics"],
+          associatedSkills: [
+            "Python",
+            "Buzz (robotique d'essaim)",
+            "Buzz (swarm robotics)",
+            "Temps réel",
+            "Multithreading",
+            "Linux (CLI)",
+            "Documentation technique",
+            "Technical documentation",
+            "Optimisation de performance",
+            "Performance optimization"
+          ],
           bullets: [
             "Multi-robot simulator (Python, Buzz): Modeling flight and battery dynamics, local mapping via Occupancy Grid Maps (OGM), and real-time Signed Distance Field (SDF) computation.",
             "Physical safety (CBF-QP): Design of a reactive obstacle avoidance filter using Control Barrier Functions (CBF) solved via quadratic programming.",
@@ -217,7 +280,26 @@ export const PORTFOLIO_DATA = {
           title: "RISC-V Processor Core Design in VHDL",
           type: "Academic Project",
           date: "Academic Project",
-          tags: ["VHDL", "RISC-V (RV32I)", "Pipelined Architecture", "GHDL", "Dhrystone"],
+          tags: ["VHDL", "RISC-V (RV32I)", "Pipelined Architecture", "GHDL"],
+          associatedSkills: [
+            "VHDL",
+            "Verilog",
+            "ModelSim",
+            "Vivado",
+            "GHDL",
+            "C",
+            "FPGA",
+            "Linux (CLI)",
+            "Git / GitHub",
+            "GDB",
+            "Make",
+            "Tests unitaires",
+            "Unit testing",
+            "Documentation technique",
+            "Technical documentation",
+            "Optimisation de performance",
+            "Performance optimization"
+          ],
           bullets: [
             "Hardware RTL Design (RV32I): VHDL development of FETCH (PC, ROM), DECODE (instruction/immediate decoding, 32-register file), EXECUTE (32-bit ALU, Store Unit), and MEMORY stages (RAM, Load Unit).",
             "5-Stage Pipeline & Data Forwarding: Implementation of the Forward Unit to eliminate data hazards, achieving a measured +382% performance gain over the sequential core baseline.",
@@ -238,7 +320,14 @@ export const PORTFOLIO_DATA = {
           title: "Operating System Creation in C",
           type: "Academic Project",
           date: "Academic Project",
-          tags: ["C", "Operating Systems", "Real-Time", "Memory Management", "Multitasking"],
+          tags: ["C", "Operating Systems", "Memory Management", "Multitasking"],
+          associatedSkills: [
+            "C",
+            "Multithreading",
+            "Linux (CLI)",
+            "Make",
+            "GDB"
+          ],
           bullets: [
             "Development of the core architecture: multitasking system, interrupt management, timer, and console."
           ],
@@ -250,6 +339,12 @@ export const PORTFOLIO_DATA = {
           type: "Personal Project",
           date: "Personal Project",
           tags: ["C++", "SFML 3", "CMake", "Networking", "Software Architecture"],
+          associatedSkills: [
+            "C++",
+            "CMake",
+            "Git / GitHub",
+            "VSCode"
+          ],
           bullets: [
             "Architectural experimentation around a MOBA concept.",
             "Integration and migration to the SFML 3 library for rendering and event handling.",
@@ -266,7 +361,14 @@ export const PORTFOLIO_DATA = {
           title: "Java Compiler",
           type: "Academic Project",
           date: "Academic Project",
-          tags: ["Java", "Compilation", "Lexer / Parser", "Optimization"],
+          tags: ["Java", "Compilation", "Contextual Verification", "Optimization"],
+          associatedSkills: [
+            "Java",
+            "Tests unitaires",
+            "Unit testing",
+            "Optimisation de performance",
+            "Performance optimization"
+          ],
           bullets: [
             "Implementation of compilation steps: Lexer, parser, contextual analysis, code generation, and optimization."
           ]
@@ -369,3 +471,32 @@ export const PORTFOLIO_DATA = {
     }
   }
 };
+
+/**
+ * Checks if a given skill name matches a project based on associated skills, tags, or text.
+ */
+export function isSkillMatchingProject(skill, project) {
+  if (!skill || !project) return false;
+
+  const normalizedSkill = skill.toLowerCase().trim();
+
+  // 1. Direct match in associatedSkills
+  if (project.associatedSkills && Array.isArray(project.associatedSkills)) {
+    const hasMatch = project.associatedSkills.some((s) => {
+      const norm = s.toLowerCase().trim();
+      return norm === normalizedSkill || norm.includes(normalizedSkill) || normalizedSkill.includes(norm);
+    });
+    if (hasMatch) return true;
+  }
+
+  // 2. Direct match in tags
+  if (project.tags && Array.isArray(project.tags)) {
+    const hasTagMatch = project.tags.some((t) => {
+      const norm = t.toLowerCase().trim();
+      return norm === normalizedSkill || norm.includes(normalizedSkill) || normalizedSkill.includes(norm);
+    });
+    if (hasTagMatch) return true;
+  }
+
+  return false;
+}

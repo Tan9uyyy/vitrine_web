@@ -38,6 +38,16 @@ export const TRANSLATIONS = {
     sourceCode: "Code source",
     openNewTab: "ouvre dans un nouvel onglet",
 
+    // Cross-filtering
+    activeFilter: "Filtre actif :",
+    projectsFoundSingle: "projet associé",
+    projectsFoundPlural: "projets associés",
+    resetFilter: "Réinitialiser le filtre",
+    filterBySkill: "Filtrer les projets utilisant cette compétence",
+    clickToFilter: "Cliquer pour voir les projets associés",
+    noProjectsMatch: "Aucun projet ne correspond à ce filtre.",
+    filterHint: "Astuce : Cliquez sur une compétence pour voir les projets correspondants",
+
     // Footer
     footerRights: "Tous droits réservés.",
     builtWith: "Conçu avec React & Vite"
@@ -80,6 +90,16 @@ export const TRANSLATIONS = {
     githubLabel: "View on GitHub",
     sourceCode: "Source code",
     openNewTab: "opens in a new tab",
+
+    // Cross-filtering
+    activeFilter: "Active filter:",
+    projectsFoundSingle: "associated project",
+    projectsFoundPlural: "associated projects",
+    resetFilter: "Reset filter",
+    filterBySkill: "Filter projects using this skill",
+    clickToFilter: "Click to view associated projects",
+    noProjectsMatch: "No project matches this filter.",
+    filterHint: "Tip: Click any skill badge to filter corresponding projects",
 
     // Footer
     footerRights: "All rights reserved.",
