@@ -19,6 +19,8 @@ export const PORTFOLIO_DATA = {
             "Python",
             "Buzz (robotique d'essaim)",
             "Buzz (swarm robotics)",
+            "Temps réel",
+            "Real-time",
             "Multithreading",
             "Linux (CLI)",
             "Documentation technique",
@@ -106,8 +108,7 @@ export const PORTFOLIO_DATA = {
             "C++",
             "CMake",
             "Git / GitHub",
-            "VSCode",
-            "Unit testing"
+            "VSCode"
           ],
           bullets: [
             "Expérimentation architecturale autour d’un concept de MOBA.",
@@ -471,32 +472,3 @@ export const PORTFOLIO_DATA = {
     }
   }
 };
-
-/**
- * Checks if a given skill name matches a project based on associated skills, tags, or text.
- */
-export function isSkillMatchingProject(skill, project) {
-  if (!skill || !project) return false;
-
-  const normalizedSkill = skill.toLowerCase().trim();
-
-  // 1. Direct match in associatedSkills
-  if (project.associatedSkills && Array.isArray(project.associatedSkills)) {
-    const hasMatch = project.associatedSkills.some((s) => {
-      const norm = s.toLowerCase().trim();
-      return norm === normalizedSkill || norm.includes(normalizedSkill) || normalizedSkill.includes(norm);
-    });
-    if (hasMatch) return true;
-  }
-
-  // 2. Direct match in tags
-  if (project.tags && Array.isArray(project.tags)) {
-    const hasTagMatch = project.tags.some((t) => {
-      const norm = t.toLowerCase().trim();
-      return norm === normalizedSkill || norm.includes(normalizedSkill) || normalizedSkill.includes(norm);
-    });
-    if (hasTagMatch) return true;
-  }
-
-  return false;
-}

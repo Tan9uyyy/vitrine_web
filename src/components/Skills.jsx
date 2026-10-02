@@ -1,6 +1,7 @@
 import { useLanguage } from '../context/LanguageContext';
 import { useFilter } from '../context/FilterContext';
-import { PORTFOLIO_DATA, isSkillMatchingProject } from '../data/portfolioData';
+import { PORTFOLIO_DATA } from '../data/portfolioData';
+import { isSkillMatchingProject } from '../utils/skillMatcher';
 
 function Skills() {
   const { lang, t } = useLanguage();

@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useFilter } from '../context/FilterContext';
-import { PORTFOLIO_DATA, isSkillMatchingProject } from '../data/portfolioData';
+import { PORTFOLIO_DATA } from '../data/portfolioData';
+import { isSkillMatchingProject, isExactSkillMatch } from '../utils/skillMatcher';
 
 function ExperienceProjects() {
   const { lang, t } = useLanguage();
@@ -150,9 +151,7 @@ function ExperienceProjects() {
               <div className="project-tags" aria-label="Technologies utilisées">
                 {proj.tags.map((tag, tagIdx) => {
                   const isTagActive =
-                    selectedSkill &&
-                    (tag.toLowerCase().includes(selectedSkill.toLowerCase()) ||
-                      selectedSkill.toLowerCase().includes(tag.toLowerCase()));
+                    selectedSkill && isExactSkillMatch(selectedSkill, tag);
 
                   return (
                     <button
