@@ -1,50 +1,19 @@
-const HEADER_CONTENT = {
-  fr: {
-    subtitle: "Étudiant Ingénieur en Systèmes Embarqués & Objets Connectés",
-    about: "À propos",
-    exp: "Expériences & Projets",
-    skills: "Compétences",
-    edu: "Parcours",
-    jobs: "Jobs Saisonniers",
-    interests: "Centres d'intérêt",
-    contact: "Contact",
-    downloadCv: "Télécharger mon CV (PDF)",
-    navAria: "Navigation principale",
-    langAria: "Changer de langue",
-    toFr: "Passer le site en français",
-    toEn: "Switch site to English",
-    socialLinks: {
-      email: "Envoyer un email",
-      linkedin: "Profil LinkedIn",
-      github: "Profil GitHub",
-      phone: "Appeler par téléphone"
-    }
-  },
-  en: {
-    subtitle: "Engineering Student in Embedded Systems & Connected Objects",
-    about: "About",
-    exp: "Experiences & Projects",
-    skills: "Skills",
-    edu: "Education",
-    jobs: "Summer Jobs",
-    interests: "Interests",
-    contact: "Contact",
-    downloadCv: "Download CV (PDF)",
-    navAria: "Main navigation",
-    langAria: "Change language",
-    toFr: "Passer le site en français",
-    toEn: "Switch site to English",
-    socialLinks: {
-      email: "Send an email",
-      linkedin: "LinkedIn profile",
-      github: "GitHub profile",
-      phone: "Call by phone"
-    }
-  }
-};
+import { useLanguage } from '../context/LanguageContext';
+import { useScrollSpy } from '../hooks/useScrollSpy';
 
-function Header({ lang, setLang }) {
-  const t = HEADER_CONTENT[lang] || HEADER_CONTENT.fr;
+const SECTION_IDS = [
+  'about',
+  'experience',
+  'skills',
+  'education',
+  'jobs',
+  'interests',
+  'contact'
+];
+
+function Header() {
+  const { lang, setLang, t } = useLanguage();
+  const activeSection = useScrollSpy(SECTION_IDS);
 
   const navLinks = [
     { id: 'about', label: t.about },
@@ -57,16 +26,19 @@ function Header({ lang, setLang }) {
   ];
 
   return (
-    <header className="sidebar">
+    <header className="sidebar" role="banner">
       <div className="profile-img-container">
         <img
           src={`${import.meta.env.BASE_URL}assets/photo/photo.jpg`}
           alt="Tanguy Bouchut"
           width="160"
           height="192"
+          loading="eager"
+          decoding="async"
         />
       </div>
-      <h2>Tanguy BOUCHUT</h2>
+
+      <h1 className="sidebar-title">Tanguy BOUCHUT</h1>
       <p className="subtitle">{t.subtitle}</p>
 
       <a
@@ -74,8 +46,20 @@ function Header({ lang, setLang }) {
         target="_blank"
         rel="noopener noreferrer"
         className="sidebar-cv-btn"
+        aria-label={`${t.downloadCv} (${t.openNewTab})`}
       >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }} aria-hidden="true">
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          style={{ flexShrink: 0 }}
+          aria-hidden="true"
+        >
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
           <polyline points="7 10 12 15 17 10" />
           <line x1="12" y1="15" x2="12" y2="3" />
@@ -83,7 +67,7 @@ function Header({ lang, setLang }) {
         <span>{t.downloadCv}</span>
       </a>
 
-      <div className="sidebar-quick-contacts" aria-label="Contacts rapides">
+      <div className="sidebar-quick-contacts" role="group" aria-label={t.quickContactsAria}>
         <a
           href="mailto:tanguy.bouchut@phelma.grenoble-inp.fr"
           className="quick-icon-btn"
@@ -135,11 +119,20 @@ function Header({ lang, setLang }) {
 
       <nav aria-label={t.navAria}>
         <ul className="nav-links">
-          {navLinks.map((link) => (
-            <li key={link.id}>
-              <a href={`#${link.id}`}>{link.label}</a>
-            </li>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.id;
+            return (
+              <li key={link.id}>
+                <a
+                  href={`#${link.id}`}
+                  className={isActive ? 'nav-item active' : 'nav-item'}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  {link.label}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </nav>
 
@@ -150,12 +143,14 @@ function Header({ lang, setLang }) {
           onClick={() => setLang('fr')}
           aria-label={t.toFr}
           aria-pressed={lang === 'fr'}
+          title="Français"
         >
           <img
             src={`${import.meta.env.BASE_URL}assets/svg/flag_france.svg`}
             alt=""
             width="28"
             height="28"
+            aria-hidden="true"
           />
         </button>
         <button
@@ -164,12 +159,14 @@ function Header({ lang, setLang }) {
           onClick={() => setLang('en')}
           aria-label={t.toEn}
           aria-pressed={lang === 'en'}
+          title="English"
         >
           <img
             src={`${import.meta.env.BASE_URL}assets/svg/flag_uk.svg`}
             alt=""
             width="28"
             height="28"
+            aria-hidden="true"
           />
         </button>
       </div>

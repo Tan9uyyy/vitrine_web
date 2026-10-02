@@ -1,43 +1,18 @@
-const INTERESTS_DATA = {
-  fr: {
-    title: "Centres d'intérêt",
-    items: [
-      {
-        title: "Sport",
-        desc: "Basketball universitaire, musculation."
-      },
-      {
-        title: "Veille Technologique",
-        desc: "Intelligence Artificielle (IA), architectures matérielles, développement bas-niveau."
-      }
-    ]
-  },
-  en: {
-    title: "Interests",
-    items: [
-      {
-        title: "Sports",
-        desc: "University basketball, weightlifting / fitness."
-      },
-      {
-        title: "Technology Watch",
-        desc: "Artificial Intelligence (AI), hardware architectures, low-level development."
-      }
-    ]
-  }
-};
+import { useLanguage } from '../context/LanguageContext';
+import { PORTFOLIO_DATA } from '../data/portfolioData';
 
-function Interests({ lang }) {
-  const t = INTERESTS_DATA[lang] || INTERESTS_DATA.fr;
+function Interests() {
+  const { lang } = useLanguage();
+  const data = (PORTFOLIO_DATA[lang] || PORTFOLIO_DATA.fr).interests;
 
   return (
-    <section id="interests">
-      <h2>{t.title}</h2>
+    <section id="interests" aria-labelledby="interests-title">
+      <h2 id="interests-title">{data.title}</h2>
       <div className="interests-grid">
-        {t.items.map((item, i) => (
+        {data.items.map((item, i) => (
           <div className="card interest-card" key={i}>
-            <h3 style={{ marginBottom: '0.5rem' }}>{item.title}</h3>
-            <p>{item.desc}</p>
+            <h3 className="interest-item-title">{item.title}</h3>
+            <p className="interest-item-desc">{item.desc}</p>
           </div>
         ))}
       </div>

@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { LanguageProvider } from './context/LanguageContext';
+import SkipLink from './components/SkipLink';
 import Header from './components/Header';
 import About from './components/About';
 import ExperienceProjects from './components/ExperienceProjects';
@@ -7,33 +8,35 @@ import Education from './components/Education';
 import SummerJobs from './components/SummerJobs';
 import Interests from './components/Interests';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 import BackgroundIcons from './components/BackgroundIcons';
 import './index.css';
 
-function App() {
-  const [lang, setLang] = useState('fr');
-
-  useEffect(() => {
-    document.documentElement.lang = lang;
-    document.title = lang === 'fr' 
-      ? 'Tanguy Bouchut - Portfolio & CV' 
-      : 'Tanguy Bouchut - Portfolio & Resume';
-  }, [lang]);
-
+function AppContent() {
   return (
     <div className="app-container">
-      <Header lang={lang} setLang={setLang} />
-      <main className="main-content">
+      <SkipLink />
+      <Header />
+      <main id="main-content" className="main-content" tabIndex="-1">
         <BackgroundIcons />
-        <About lang={lang} />
-        <ExperienceProjects lang={lang} />
-        <Skills lang={lang} />
-        <Education lang={lang} />
-        <SummerJobs lang={lang} />
-        <Interests lang={lang} />
-        <Contact lang={lang} />
+        <About />
+        <ExperienceProjects />
+        <Skills />
+        <Education />
+        <SummerJobs />
+        <Interests />
+        <Contact />
+        <Footer />
       </main>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   );
 }
 
