@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <polygon points="12 8 14 10 14 14 12 16 10 14 10 10" />
+  
+  <path d="M10 10L6 6M14 10l4-4M10 14l-4 4M14 14l4 4" />
+  
+  <path d="M11 8V6h2v2" />
+  
+  <circle cx="5" cy="5" r="3" stroke-dasharray="2 3" />
+  <path d="M5 3v4M3 5h4" />
+  
+  <circle cx="19" cy="5" r="3" stroke-dasharray="2 3" />
+  <path d="M19 3v4M17 5h4" />
+  
+  <circle cx="5" cy="19" r="3" stroke-dasharray="2 3" />
+  <path d="M5 17v4M3 19h4" />
+  
+  <circle cx="19" cy="19" r="3" stroke-dasharray="2 3" />
+  <path d="M19 17v4M17 19h4" />
+</svg>
