@@ -232,7 +232,7 @@ export const PORTFOLIO_DATA = {
       linkedinLink: "https://linkedin.com/in/tanguybouchut/",
       githubVal: "github.com/Tan9uyyy",
       githubLink: "https://github.com/Tan9uyyy",
-      cvLink: "cv.pdf"
+      cvLink: "BOUCHUT_Tanguy_cv.pdf"
     }
   },
 
@@ -468,7 +468,7 @@ export const PORTFOLIO_DATA = {
       linkedinLink: "https://linkedin.com/in/tanguybouchut/",
       githubVal: "github.com/Tan9uyyy",
       githubLink: "https://github.com/Tan9uyyy",
-      cvLink: "cv.pdf"
+      cvLink: "BOUCHUT_Tanguy_cv.pdf"
     }
   }
 };

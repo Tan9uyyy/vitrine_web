@@ -42,7 +42,7 @@ function Header() {
       <p className="subtitle">{t.subtitle}</p>
 
       <a
-        href={`${import.meta.env.BASE_URL}cv.pdf`}
+        href={`${import.meta.env.BASE_URL}BOUCHUT_Tanguy_cv.pdf`}
         target="_blank"
         rel="noopener noreferrer"
         className="sidebar-cv-btn"

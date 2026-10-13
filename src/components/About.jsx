@@ -15,7 +15,7 @@ function About() {
         <p className="about-text">{data.p2}</p>
         <div className="card-actions">
           <a
-            href={`${import.meta.env.BASE_URL}cv.pdf`}
+            href={`${import.meta.env.BASE_URL}BOUCHUT_Tanguy_cv.pdf`}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-cv-download"
