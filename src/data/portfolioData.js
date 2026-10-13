@@ -153,12 +153,16 @@ export const PORTFOLIO_DATA = {
           skills: ["Temps réel", "Multithreading", "Microcontrôleurs"]
         },
         {
+          name: "IoT & Réseaux",
+          skills: ["Pile TCP/IP (IPv4/IPv6, routage, VLAN)", "RFID", "Diagnostic (Wireshark, tcpdump)"]
+        },
+        {
           name: "Conception numérique / FPGA",
           skills: ["VHDL", "Verilog", "ModelSim", "Vivado", "GHDL"]
         },
         {
           name: "Électronique & CAO",
-          skills: ["KiCad"]
+          skills: ["KiCad", "Keysight ADS"]
         },
         {
           name: "Outils & Environnements",
@@ -389,12 +393,16 @@ export const PORTFOLIO_DATA = {
           skills: ["Real-time", "Multithreading", "Microcontrollers"]
         },
         {
+          name: "IoT & Networks",
+          skills: ["TCP/IP stack (IPv4/IPv6, routing, VLAN)", "RFID", "Diagnostics (Wireshark, tcpdump)"]
+        },
+        {
           name: "Digital Design & FPGA",
           skills: ["VHDL", "Verilog", "ModelSim", "Vivado", "GHDL"]
         },
         {
           name: "Electronics & CAD",
-          skills: ["KiCad"]
+          skills: ["KiCad", "Keysight ADS"]
         },
         {
           name: "Tools & environments",
